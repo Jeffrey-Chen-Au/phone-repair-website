@@ -11,16 +11,26 @@ A production website built for a local phone repair business to improve online p
 This project focused on delivering a **lightweight, high-performance website** for a repair shop with two primary goals:
 
 - improve customer acquisition through SEO and accessibility  
-- simplify customer inquiry flow for repair services  
+- simplify customer inquiry and booking flow for repair services  
 
 The solution was designed to be simple, scalable, and easy to maintain.
 
 ---
 
+## 🧱 Real-World Constraints
+
+- Non-technical client → required extremely simple content management  
+- Low budget → avoided complex backend or CMS setup  
+- Mobile-heavy traffic → prioritized performance and responsive UX  
+- No internal system → inquiry + booking flow designed for manual processing  
+
+---
+
 ## 🧩 Key Features
 
-- Service catalog (e.g. screen repair, battery replacement, diagnostics)  
+- Service catalog (screen repair, battery replacement, diagnostics)  
 - Customer inquiry form with backend storage  
+- Booking section for scheduling repair requests  
 - Business information (location, hours, contact details)  
 - Fully responsive layout (mobile-first)  
 - SEO-optimized structure using Next.js  
@@ -34,33 +44,89 @@ The solution was designed to be simple, scalable, and easy to maintain.
 - Component-based UI for maintainability  
 
 ### Backend (Firebase)
-- Firestore: stores customer inquiries  
+- Firestore: stores customer inquiries and bookings  
 - Cloud Functions (optional): validation / processing  
 - Hosting: production deployment  
 
-### Data Flow
+---
 
-1. User submits inquiry form  
-2. Client validates input (required fields)  
-3. Data is sent to Firestore  
-4. Business reviews and responds manually  
+## 🗄️ Data Model (Firestore)
+
+### inquiries
+```text
+{
+  id: string,
+  serviceType: string,
+  deviceModel: string,
+  issueDescription: string,
+  customerName: string,
+  contactPhone: string,
+  createdAt: timestamp,
+  status: "new" | "contacted" | "completed"
+}
+```
+### bookings
+```text
+{
+  id: string,
+  serviceType: string,
+  deviceModel: string,
+  preferredDate: string,
+  preferredTime: string,
+  customerName: string,
+  contactPhone: string,
+  notes: string,
+  createdAt: timestamp,
+  status: "pending" | "confirmed" | "completed"
+}
+```
+---
+
+## 🔄 Data Flow
+
+### Inquiry Flow
+
+1. User submits inquiry form (client-side validation)  
+2. Request sent via Firebase SDK  
+3. Firestore write operation (secured via rules)  
+4. Optional Cloud Function triggers:  
+   - input sanitization  
+   - notification hook (future)  
+5. Data stored in `inquiries` collection  
+6. Business manually reviews entries  
+
+### Booking Flow
+
+1. User selects service and preferred time  
+2. Inputs device and contact details  
+3. Booking request sent to Firestore  
+4. Stored in `bookings` collection  
+5. Business manually confirms booking  
 
 ---
 
-<h2>🏗️ System Architecture</h2>
-<p align="center">
-  <img src="./docs/architecture.png" alt="Architecture Diagram" width="700" />
-</p>
+## ⚡ Performance Considerations
+
+- Used SSG for static pages (faster load, better SEO)  
+- Optimized images and minimized JS bundle  
+- Mobile-first design reduces layout shift  
+- Firebase CDN hosting for fast global delivery  
 
 ---
 
-## 🔄 Core Workflow: Customer Inquiry
+## 🔄 Core Workflow
 
+### Inquiry
 1. Customer selects service type  
 2. Enters device details and issue description  
 3. Provides contact information  
 4. Form submission is validated and stored  
-5. Business receives and processes inquiry  
+
+### Booking
+1. Customer selects service  
+2. Chooses preferred date and time  
+3. Provides device and contact details  
+4. Booking request is stored and reviewed  
 
 ---
 
@@ -68,7 +134,7 @@ The solution was designed to be simple, scalable, and easy to maintain.
 
 ### Why Next.js
 - SEO is critical for local business discovery  
-- SSR improves search engine indexing vs SPA  
+- SSR/SSG improves search engine indexing vs SPA  
 
 ### Why Firebase
 - minimal backend setup and maintenance  
@@ -77,7 +143,7 @@ The solution was designed to be simple, scalable, and easy to maintain.
 
 ### Trade-offs
 - No admin dashboard (kept scope lean)  
-- Limited automation in inquiry handling  
+- Manual booking confirmation process  
 - Not designed for large-scale multi-branch systems  
 
 ---
@@ -85,27 +151,37 @@ The solution was designed to be simple, scalable, and easy to maintain.
 ## 🧠 Challenges & Solutions
 
 **Challenge:** balancing simplicity vs scalability  
-→ Designed Firestore structure to allow future extension  
+→ Designed Firestore schema to support both inquiries and bookings  
 
 **Challenge:** mobile-first traffic  
 → Implemented responsive layout optimized for smaller screens  
 
 ---
 
+## 🔮 Future Improvements
+
+- Admin dashboard for inquiry & booking management  
+- Email/SMS notification integration  
+- Automated booking confirmation system  
+- Multi-location support for scaling business  
+
+---
+
 ## 🎯 Outcome
 
-- Delivered a production-ready website for a real business  
-- Improved online visibility and accessibility  
-- Created a foundation for future features (e.g. booking system, admin panel)  
+- Delivered a live production website for a local business  
+- Enabled structured customer inquiries and booking requests  
+- Reduced reliance on manual messaging channels  
+- Established scalable foundation for future automation  
 
 ---
 
 ## 👤 My Role
 
-- gathered requirements directly from client  
-- designed user flow and layout  
-- implemented frontend and backend integration  
-- deployed and configured production environment  
+- Led end-to-end delivery from requirements → deployment  
+- Translated client needs into a scalable technical solution  
+- Designed system architecture and data model  
+- Implemented frontend, backend integration, and deployment  
 
 ---
 
