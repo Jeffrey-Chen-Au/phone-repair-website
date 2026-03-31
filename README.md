@@ -47,6 +47,13 @@ The solution was designed to be simple, scalable, and easy to maintain.
 
 ---
 
+<h2>🏗️ System Architecture</h2>
+<p align="center">
+  <img src="./docs/architecture.png" alt="Architecture Diagram" width="700" />
+</p>
+
+---
+
 ## 🔄 Core Workflow: Customer Inquiry
 
 1. Customer selects service type  
