@@ -1,83 +1,108 @@
-# Phone Repair Shop Website
+# Repair Shop Website (Client Project)
 
-> 🌐 A freelance project delivering a complete business website for local phone repair shops.
+A production website built for a local phone repair business to improve online presence and streamline customer inquiries.
+
+> ⚠️ Note: This is a sanitized case study. Source code and business-specific details are private.
 
 ---
 
 ## 🚀 Overview
 
-This project involved designing and developing a **production website** for a local phone repair business.
+This project focused on delivering a **lightweight, high-performance website** for a repair shop with two primary goals:
 
-The goal was to provide:
+- improve customer acquisition through SEO and accessibility  
+- simplify customer inquiry flow for repair services  
 
-- clear service information  
-- easy customer contact  
-- a professional online presence  
-
-The solution was delivered end-to-end, from requirements gathering to deployment.
+The solution was designed to be simple, scalable, and easy to maintain.
 
 ---
 
-## 🧩 Features
+## 🧩 Key Features
 
-- 📱 Service listing (screen repair, battery replacement, etc.)  
-- 📍 Business information (location, hours, contact details)  
-- 📞 Contact / inquiry section  
-- 💻 Responsive design for mobile and desktop  
-
----
-
-## 🧠 Technical Highlights
-
-- Built using Next.js for better performance and SEO
-- Used Firebase as backend for data storage and simple integrations
-- Designed responsive layout for both mobile and desktop users
-- Structured the app for easy future updates and scalability
+- Service catalog (e.g. screen repair, battery replacement, diagnostics)  
+- Customer inquiry form with backend storage  
+- Business information (location, hours, contact details)  
+- Fully responsive layout (mobile-first)  
+- SEO-optimized structure using Next.js  
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ System Architecture
 
 ### Frontend
-- Next.js (React)
-- CSS / Responsive design
+- Next.js (SSR / SSG for performance and SEO)  
+- Component-based UI for maintainability  
 
-### Backend
-- Firebase (Firestore / Hosting / Functions if applicable)
+### Backend (Firebase)
+- Firestore: stores customer inquiries  
+- Cloud Functions (optional): validation / processing  
+- Hosting: production deployment  
 
-### Deployment
-- Deployed as a production website for client use
-  
+### Data Flow
+
+1. User submits inquiry form  
+2. Client validates input (required fields)  
+3. Data is sent to Firestore  
+4. Business reviews and responds manually  
+
 ---
 
-## 🧠 My Responsibilities
+## 🔄 Core Workflow: Customer Inquiry
 
-- worked directly with client to understand requirements  
-- designed layout and user flow  
-- implemented frontend and basic interactions  
-- deployed and configured website for production use  
+1. Customer selects service type  
+2. Enters device details and issue description  
+3. Provides contact information  
+4. Form submission is validated and stored  
+5. Business receives and processes inquiry  
+
+---
+
+## ⚙️ Key Technical Decisions
+
+### Why Next.js
+- SEO is critical for local business discovery  
+- SSR improves search engine indexing vs SPA  
+
+### Why Firebase
+- minimal backend setup and maintenance  
+- fast deployment cycle  
+- suitable for small-scale data workflows  
+
+### Trade-offs
+- No admin dashboard (kept scope lean)  
+- Limited automation in inquiry handling  
+- Not designed for large-scale multi-branch systems  
+
+---
+
+## 🧠 Challenges & Solutions
+
+**Challenge:** balancing simplicity vs scalability  
+→ Designed Firestore structure to allow future extension  
+
+**Challenge:** mobile-first traffic  
+→ Implemented responsive layout optimized for smaller screens  
 
 ---
 
 ## 🎯 Outcome
 
-- delivered a functional website for a real business  
-- improved the shop’s online visibility  
-- enabled customers to easily access services and contact the business  
+- Delivered a production-ready website for a real business  
+- Improved online visibility and accessibility  
+- Created a foundation for future features (e.g. booking system, admin panel)  
 
 ---
 
-## ⚠️ Notes
+## 👤 My Role
 
-- business details are generalized for privacy  
-- no sensitive client data is included  
+- gathered requirements directly from client  
+- designed user flow and layout  
+- implemented frontend and backend integration  
+- deployed and configured production environment  
 
 ---
 
-## 👤 Author
+## 🔒 Notes
 
-Mobile & web engineer with experience in:
-
-- mobile app development (React Native)  
-- real-time systems (Firebase)  
-- freelance client delivery  
+- Business details are generalized for privacy  
+- No sensitive data or proprietary logic is included  
