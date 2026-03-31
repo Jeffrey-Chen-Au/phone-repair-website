@@ -1,6 +1,6 @@
 # Phone Repair Shop Website
 
-> 🌐 A freelance project delivering a complete business website for a local phone repair shop.
+> 🌐 A freelance project delivering a complete business website for local phone repair shops.
 
 ---
 
@@ -27,11 +27,27 @@ The solution was delivered end-to-end, from requirements gathering to deployment
 
 ---
 
+## 🧠 Technical Highlights
+
+- Built using Next.js for better performance and SEO
+- Used Firebase as backend for data storage and simple integrations
+- Designed responsive layout for both mobile and desktop users
+- Structured the app for easy future updates and scalability
+
+---
+
 ## 🛠️ Tech Stack
 
-- Frontend: HTML / CSS / JavaScript *(or replace with your actual stack)*  
-- Hosting: *(e.g. shared hosting / VPS — adjust if needed)*  
+### Frontend
+- Next.js (React)
+- CSS / Responsive design
 
+### Backend
+- Firebase (Firestore / Hosting / Functions if applicable)
+
+### Deployment
+- Deployed as a production website for client use
+  
 ---
 
 ## 🧠 My Responsibilities
